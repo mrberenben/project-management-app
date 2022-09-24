@@ -1,0 +1,132 @@
+.project_modal {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  inline-size: 100%;
+  block-size: 100%;
+
+  z-index: 100;
+}
+
+.modal {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  inline-size: 100%;
+  max-inline-size: 480px;
+
+  padding: 1.5rem 2rem;
+  margin: 1rem;
+
+  background-color: var(--colors-dark-200);
+  border: 1px solid var(--colors-dark-200);
+  border-radius: var(--radius-m);
+
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.modal_title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.project_avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  inline-size: 128px;
+  block-size: 128px;
+
+  border-radius: var(--radius-rounded);
+  border: 1px solid var(--colors-dark-500);
+  background-color: var(--colors-dark-400);
+
+  text-transform: uppercase;
+  font-size: 24px;
+  color: var(--colors-light-100);
+
+  aspect-ratio: 1/1;
+}
+
+.modal_body {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  margin-block-start: 3rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.form_group label {
+  font-size: 14px;
+}
+
+.form_group input,
+.form_group textarea {
+  padding: 0.5rem 1rem;
+
+  outline: 1px solid var(--colors-dark-500);
+  border-radius: var(--radius-m);
+  border: none;
+  background-color: var(--colors-dark-400);
+
+  color: var(--colors-light-100);
+  font: inherit;
+}
+
+.form_group textarea {
+  block-size: 126px;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  outline: 2px solid var(--colors-light-100);
+}
+
+.form_group:last-child {
+  margin-block-start: 1.5rem;
+}
+
+.form_group button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  inline-size: fit-content;
+  padding: 0.625rem 1.375rem;
+  margin-inline: auto;
+
+  border-radius: var(--radius-m);
+  border: none;
+  background-color: #232ec2;
+
+  color: var(--colors-light-100);
+  font-weight: 500;
+  font-size: 14px;
+
+  cursor: pointer;
+}

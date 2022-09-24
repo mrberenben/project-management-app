@@ -105,8 +105,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--colors-light-100);
-  color: var(--colors-dark-100);
+  background-color: var(--colors-dark-100);
+  color: var(--colors-light-100);
   font: normal normal 16px/1.6667 Inter, -apple-system, Helvetica, Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -169,5 +169,7 @@ textarea {
 }
 
 #app-mount {
+  display: flex;
+  flex-direction: column;
   min-block-size: 100%;
 }
