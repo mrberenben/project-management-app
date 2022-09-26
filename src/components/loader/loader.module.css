@@ -1,0 +1,26 @@
+.loader {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  aspect-ratio: 1/1;
+
+  border: 3px solid var(--colors-light-default);
+  border-bottom-color: transparent;
+  border-radius: var(--radius-rounded);
+
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}

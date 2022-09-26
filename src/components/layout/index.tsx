@@ -1,10 +1,15 @@
-import Header from "src/components/layout/header";
+// components
+import Sidebar from "src/components/layout/sidebar";
 
-function AppLayout({ children }: { children: React.ReactNode }) {
+type AppLayoutProps = {
+  children: React.ReactNode;
+};
+
+function AppLayout(props: AppLayoutProps) {
   return (
     <>
-      <Header />
-      <main>{children}</main>
+      <Sidebar />
+      <main style={{ marginInlineStart: 260 }}>{props.children}</main>
     </>
   );
 }

@@ -1,0 +1,102 @@
+.sidebar {
+  position: fixed;
+  inset: 0;
+  right: initial;
+
+  display: flex;
+  flex-direction: column;
+
+  inline-size: 260px;
+  block-size: 100%;
+
+  background-color: var(--colors-dark-200);
+
+  z-index: 100;
+  overflow: hidden;
+}
+
+.project_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  margin: 2.5rem 1rem 0;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+  padding: 0.5rem;
+
+  border-radius: var(--radius-m);
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: 150ms background-color var(--transition-curve);
+  will-change: background-color;
+}
+
+.project:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.project_icon {
+  display: flex;
+
+  inline-size: 3rem;
+  block-size: 3rem;
+
+  user-select: none;
+}
+
+.project_icon img {
+  pointer-events: none;
+}
+
+.project_metadata {
+  display: flex;
+  flex-direction: column;
+
+  max-inline-size: 50%;
+
+  overflow: hidden;
+  user-select: none;
+}
+
+.project_metadata .project_name {
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project_metadata .project_desc {
+  font-size: 12px;
+  letter-spacing: -0.0125rem;
+  color: var(--colors-light-600);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project_switcher {
+  display: flex;
+
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+
+  color: var(--colors-light-400);
+
+  margin-inline-start: auto;
+  transform: rotate(90deg);
+}
+
+.project:hover .project_switcher {
+  color: var(--colors-light-100);
+}

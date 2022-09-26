@@ -1,19 +1,13 @@
 :root {
   /* colors */
-  --colors-green: 238, 254, 125;
-  --colors-green-active: 218, 234, 105;
-  --colors-teal: 95, 208, 180;
-  --colors-pink: 255, 156, 221;
-  --colors-blue: 112, 172, 254;
-  --colors-purple: 200, 145, 243;
-  --colors-yellow: 255, 233, 39;
+  --colors-blue: 45, 87, 253;
 
   --colors-dark-default: #000;
   --colors-dark-100: #0d0d0f;
   --colors-dark-200: #1a1a1d;
   --colors-dark-300: #212123;
   --colors-dark-400: #29292c;
-  --colors-dark-500: #37373a;
+  --colors-dark-500: #343437;
   --colors-dark-600: #4a4b4c;
   --colors-dark-700: #57585a;
   --colors-dark-800: #66686a;
