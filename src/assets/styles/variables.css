@@ -1,23 +1,23 @@
 :root {
   /* colors */
   --colors-blue: 45, 87, 253;
+  --colors-blue-hover: 36, 78, 244;
 
-  --colors-dark-default: #000;
-  --colors-dark-100: #0d0d0f;
-  --colors-dark-200: #1a1a1d;
-  --colors-dark-300: #212123;
-  --colors-dark-400: #29292c;
-  --colors-dark-500: #343437;
-  --colors-dark-600: #4a4b4c;
-  --colors-dark-700: #57585a;
-  --colors-dark-800: #66686a;
-  --colors-dark-900: #737579;
+  --colors-dark-default: #0d0d0f;
+  --colors-dark-100: #1a1a1d;
+  --colors-dark-200: #212123;
+  --colors-dark-300: #29292c;
+  --colors-dark-400: #343437;
+  --colors-dark-500: #4a4b4c;
+  --colors-dark-600: #57585a;
+  --colors-dark-700: #66686a;
+  --colors-dark-800: #777676;
 
-  --colors-light-default: #fffffe;
-  --colors-light-100: #f6f6fa;
-  --colors-light-200: #e8eaef;
-  --colors-light-300: #d6d8da;
-  --colors-light-400: #c4c4c9;
+  --colors-light-default: #fefefe;
+  --colors-light-100: #f5f4f4;
+  --colors-light-200: #e8e7e7;
+  --colors-light-300: #dddcdc;
+  --colors-light-400: #d3d2d2;
   --colors-light-500: #b0b1b4;
   --colors-light-600: #a1a3a5;
   --colors-light-700: #909294;

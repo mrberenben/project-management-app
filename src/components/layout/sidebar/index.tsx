@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import styles from "src/components/layout/sidebar.module.css";
+import styles from "src/components/layout/sidebar/sidebar.module.css";
 
 // components
 import Dropdown from "src/components/dropdown";
@@ -51,9 +51,7 @@ function Sidebar() {
             <h6 className={styles.project_name} title={project?.name}>
               {project?.name}
             </h6>
-            <p className={styles.project_desc} title={project?.description}>
-              {project?.description}
-            </p>
+            <p className={styles.project_desc}>Team Project</p>
           </div>
           <div className={styles.project_switcher}>
             <ChevronVertical />

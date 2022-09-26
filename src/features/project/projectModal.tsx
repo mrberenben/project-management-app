@@ -86,37 +86,39 @@ function ProjectModal({ visibility }: { visibility: boolean }) {
         )}
         <header className={styles.modal_header}>
           <h1 className={styles.modal_title}>Create a new project</h1>
-          <div
-            ref={AvatarRef}
-            className={styles.project_avatar}
-            style={{ backgroundColor: avatar.color }}
-          >
-            {avatar.icon}
-          </div>
-          <div className={styles.avatar_palette}>
-            {Palette.map((color: string, index: number) => (
-              <span
-                key={index}
-                className={`${styles.avatar_palette_item} ${
-                  color === avatar.color ? styles.active : undefined
-                }`}
-                style={{ backgroundColor: color }}
-                onClick={() => handleAvatarChange("color", color)}
-              />
-            ))}
-          </div>
-          <div className={styles.avatar_palette}>
-            {Icons.map((icon: string, index: number) => (
-              <span
-                key={index}
-                className={`${styles.avatar_palette_item} ${
-                  icon === avatar.icon ? styles.active : undefined
-                }`}
-                onClick={() => handleAvatarChange("icon", icon)}
-              >
-                {icon}
-              </span>
-            ))}
+          <div className={styles.avatar_maker}>
+            <div
+              ref={AvatarRef}
+              className={styles.project_avatar}
+              style={{ backgroundColor: avatar.color }}
+            >
+              {avatar.icon}
+            </div>
+            <div className={styles.avatar_palette}>
+              {Palette.map((color: string, index: number) => (
+                <span
+                  key={index}
+                  className={`${styles.avatar_palette_item} ${
+                    color === avatar.color ? styles.active : undefined
+                  }`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => handleAvatarChange("color", color)}
+                />
+              ))}
+            </div>
+            <div className={styles.emoji_palette}>
+              {Icons.map((icon: string, index: number) => (
+                <span
+                  key={index}
+                  className={`${styles.emoji_palette_item} ${
+                    icon === avatar.icon ? styles.active : undefined
+                  }`}
+                  onClick={() => handleAvatarChange("icon", icon)}
+                >
+                  {icon}
+                </span>
+              ))}
+            </div>
           </div>
         </header>
         <main className={styles.modal_body}>

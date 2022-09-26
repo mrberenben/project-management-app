@@ -10,7 +10,7 @@
   block-size: 100%;
 
   backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.425);
 
   z-index: 100;
   overflow-y: auto;
@@ -28,11 +28,10 @@
   padding: 2rem;
   margin: 1rem;
 
-  background-color: var(--colors-dark-200);
-  border: 1px solid var(--colors-dark-200);
+  background-color: var(--colors-light-100);
   border-radius: var(--radius-m);
 
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.105);
 }
 
 .close {
@@ -49,8 +48,8 @@
 
   border-radius: var(--radius-rounded);
   border: none;
-  background-color: var(--colors-dark-400);
-  color: var(--colors-light-100);
+  background-color: var(--colors-light-300);
+  color: var(--colors-dark-100);
 
   cursor: pointer;
 }
@@ -69,6 +68,10 @@
   margin-block-end: 1.5rem;
 }
 
+.avatar_maker {
+  position: relative;
+}
+
 .project_avatar {
   display: flex;
   justify-content: center;
@@ -79,12 +82,12 @@
   block-size: 128px;
 
   border-radius: var(--radius-xl);
-  background-color: var(--colors-dark-400);
+  background-color: var(--colors-light-300);
   margin-block-end: 1.5rem;
 
   text-transform: uppercase;
   font-size: 48px;
-  color: var(--colors-light-100);
+  color: var(--colors-dark-100);
 
   aspect-ratio: 1/1;
 }
@@ -106,14 +109,63 @@
   inline-size: 16px;
   block-size: 16px;
 
-  border-radius: var(--radius-rounded);
+  border-radius: var(--radius-s);
   outline: 2px solid transparent;
+
   cursor: pointer;
   overflow: hidden;
 }
 
+.emoji_palette_item {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  inline-size: 16px;
+  block-size: 16px;
+
+  padding: 6px;
+  box-sizing: content-box;
+
+  background-color: var(--colors-light-300);
+  border-radius: var(--radius-rounded);
+  outline: 2px solid var(--colors-light-400);
+
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.emoji_palette_item:nth-child(1) {
+  top: 0;
+  right: -42px;
+}
+.emoji_palette_item:nth-child(2) {
+  top: 52px;
+  left: -64px;
+}
+.emoji_palette_item:nth-child(3) {
+  bottom: 42px;
+  right: -42px;
+}
+.emoji_palette_item:nth-child(4) {
+  bottom: 42px;
+  left: -42px;
+}
+.emoji_palette_item:nth-child(5) {
+  top: 0;
+  left: -42px;
+}
+.emoji_palette_item:nth-child(6) {
+  top: 52px;
+  right: -64px;
+}
+
 .avatar_palette_item.active {
-  outline-color: var(--colors-light-100);
+  outline-color: var(--colors-dark-100);
+}
+.emoji_palette_item.active {
+  outline-color: var(--colors-light-800);
 }
 
 .modal_body {
@@ -139,12 +191,12 @@
 .form_group textarea {
   padding: 0.5rem 1rem;
 
-  outline: 1px solid var(--colors-dark-500);
+  outline: 1px solid var(--colors-light-400);
   border-radius: var(--radius-m);
   border: none;
-  background-color: var(--colors-dark-400);
+  background-color: var(--colors-light-200);
 
-  color: var(--colors-light-100);
+  color: var(--colors-dark-100);
   font: inherit;
 }
 
@@ -154,7 +206,7 @@
 
 .form_group input:focus,
 .form_group textarea:focus {
-  outline: 2px solid var(--colors-light-100);
+  outline: 2px solid var(--colors-light-400);
 }
 
 .form_group:last-child {

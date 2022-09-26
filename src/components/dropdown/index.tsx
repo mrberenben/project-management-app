@@ -37,14 +37,19 @@ function Dropdown(props: DropdownProps) {
           </div>
         </div>
       ))}
-      <div className={styles.dropdown_item} onClick={() => props.onNewClick()}>
-        <div className={styles.project_icon}>
-          <PlusIcon />
+      {props.menu.length > 1 ? null : (
+        <div
+          className={styles.dropdown_item}
+          onClick={() => props.onNewClick()}
+        >
+          <div className={styles.project_icon}>
+            <PlusIcon />
+          </div>
+          <div className={styles.project_metadata}>
+            <h6 className={styles.project_name}>Create new project</h6>
+          </div>
         </div>
-        <div className={styles.project_metadata}>
-          <h6 className={styles.project_name}>Create new project</h6>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

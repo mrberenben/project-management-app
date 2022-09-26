@@ -9,7 +9,7 @@
   inline-size: 260px;
   block-size: 100%;
 
-  background-color: var(--colors-dark-200);
+  background-color: var(--colors-light-100);
 
   z-index: 100;
   overflow: hidden;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
 
-  margin: 2.5rem 1rem 0;
+  margin: 2.5rem 0.75rem 0;
 }
 
 .project {
@@ -40,7 +40,7 @@
 }
 
 .project:hover {
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .project_icon {
@@ -60,15 +60,15 @@
   display: flex;
   flex-direction: column;
 
-  max-inline-size: 50%;
-
   overflow: hidden;
   user-select: none;
 }
 
 .project_metadata .project_name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
+  letter-spacing: -0.0125rem;
+  line-height: 1.325;
 
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -78,7 +78,7 @@
 .project_metadata .project_desc {
   font-size: 12px;
   letter-spacing: -0.0125rem;
-  color: var(--colors-light-600);
+  color: var(--colors-dark-700);
 
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -91,12 +91,12 @@
   inline-size: 0.875rem;
   block-size: 0.875rem;
 
-  color: var(--colors-light-400);
+  color: var(--colors-dark-800);
 
   margin-inline-start: auto;
   transform: rotate(90deg);
 }
 
 .project:hover .project_switcher {
-  color: var(--colors-light-100);
+  color: var(--colors-dark-300);
 }

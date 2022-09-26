@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
 
-  background-color: var(--colors-dark-400);
+  background-color: var(--colors-light-200);
   border-radius: var(--radius-m);
 
   inline-size: 100%;
@@ -25,9 +25,14 @@
   gap: 0.75rem;
 
   border-radius: var(--radius-s);
-  background-color: var(--colors-dark-300);
+  background-color: var(--colors-light-300);
+  border: 1px solid var(--colors-light-400);
 
   cursor: pointer;
+}
+
+.dropdown_item:hover {
+  background-color: var(--colors-light-400);
 }
 
 .project_icon {
@@ -38,7 +43,7 @@
   inline-size: 2.5rem;
   block-size: 2.5rem;
 
-  background-color: var(--colors-dark-300);
+  background-color: var(--colors-light-400);
   border-radius: var(--radius-s);
 
   user-select: none;
@@ -54,7 +59,7 @@
 .project_icon :global(.icon) {
   inline-size: 1.5rem;
   block-size: 1.5rem;
-  color: var(--colors-light-600);
+  color: var(--colors-dark-600);
 }
 
 .project_metadata {
@@ -77,7 +82,7 @@
 .project_metadata .project_desc {
   font-size: 12px;
   letter-spacing: -0.0125rem;
-  color: var(--colors-light-600);
+  color: var(--colors-dark-600);
 
   white-space: nowrap;
   text-overflow: ellipsis;

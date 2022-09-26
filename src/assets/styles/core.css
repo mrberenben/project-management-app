@@ -105,8 +105,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--colors-dark-100);
-  color: var(--colors-light-100);
+  background-color: var(--colors-light-default);
+  color: var(--colors-dark-default);
   font: normal normal 16px/1.6667 Inter, -apple-system, Helvetica, Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;

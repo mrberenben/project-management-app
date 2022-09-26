@@ -16,14 +16,24 @@
   font-size: 14px;
 
   cursor: pointer;
+  transition: 150ms background-color var(--transition-curve),
+    150ms transform var(--transition-curve);
+  will-change: transform, background-color;
 }
 
 .button.primary {
   background-color: rgb(var(--colors-blue));
 }
+.button.primary:hover {
+  background-color: rgb(var(--colors-blue-hover));
+}
 
 .button:disabled {
   opacity: 0.825;
+}
+
+.button:active {
+  transform: scale(0.98);
 }
 
 .button:disabled .children {

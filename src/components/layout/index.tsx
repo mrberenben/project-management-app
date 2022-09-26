@@ -9,7 +9,9 @@ function AppLayout(props: AppLayoutProps) {
   return (
     <>
       <Sidebar />
-      <main style={{ marginInlineStart: 260 }}>{props.children}</main>
+      <main style={{ marginInlineStart: 260, padding: "3rem" }}>
+        {props.children}
+      </main>
     </>
   );
 }
