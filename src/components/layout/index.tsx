@@ -5,13 +5,19 @@ type AppLayoutProps = {
   children: React.ReactNode;
 };
 
+const styles: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  blockSize: "100%",
+  marginInlineStart: 280,
+  padding: "3rem"
+};
+
 function AppLayout(props: AppLayoutProps) {
   return (
     <>
       <Sidebar />
-      <main style={{ marginInlineStart: 260, padding: "3rem" }}>
-        {props.children}
-      </main>
+      <div style={styles}>{props.children}</div>
     </>
   );
 }

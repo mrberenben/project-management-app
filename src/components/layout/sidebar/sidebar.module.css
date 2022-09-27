@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
 
-  inline-size: 260px;
+  inline-size: 280px;
   block-size: 100%;
 
   background-color: var(--colors-light-100);

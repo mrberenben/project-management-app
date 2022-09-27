@@ -171,7 +171,7 @@ textarea {
 #app-mount {
   display: flex;
   flex-direction: column;
-  min-block-size: 100%;
+  block-size: 100%;
 }
 
 .icon {
@@ -184,4 +184,52 @@ textarea {
 .icon svg {
   inline-size: 100%;
   block-size: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.5rem 1rem;
+
+  outline: 1px solid var(--colors-light-400);
+  border-radius: var(--radius-m);
+  border: none;
+  background-color: var(--colors-light-200);
+
+  color: var(--colors-dark-100);
+  font: inherit;
+}
+
+.form-group textarea {
+  block-size: 126px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 2px solid rgb(var(--colors-blue));
+}
+
+.form-group select {
+  appearance: none;
+  padding: 0.75rem;
+
+  cursor: pointer;
+}
+
+.form-group:last-child {
+  align-items: center;
+
+  margin-block-start: 1.5rem;
 }

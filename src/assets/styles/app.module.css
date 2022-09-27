@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+  inline-size: 100%;
+  block-size: 100%;
+  margin-block-start: 3rem;
+}
+
+.deck {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  inline-size: 100%;
+  block-size: 100%;
+
+  gap: 2rem;
+}

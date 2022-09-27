@@ -2,6 +2,10 @@
   /* colors */
   --colors-blue: 45, 87, 253;
   --colors-blue-hover: 36, 78, 244;
+  --colors-yellow: 215, 152, 0;
+  --colors-purple: 127, 45, 233;
+  --colors-lightblue: 1, 167, 218;
+  --colors-green: 58, 193, 87;
 
   --colors-dark-default: #0d0d0f;
   --colors-dark-100: #1a1a1d;

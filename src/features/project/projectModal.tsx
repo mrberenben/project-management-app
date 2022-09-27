@@ -16,7 +16,7 @@ import {
 import { Palette, Icons } from "src/config/avatar";
 import { XIcon } from "src/config/icons";
 
-function ProjectModal({ visibility }: { visibility: boolean }) {
+function ProjectModal() {
   const dispatch = useAppDispatch();
   const { projects, project_modal_visibility } = useAppSelector(
     state => state.project
@@ -70,7 +70,7 @@ function ProjectModal({ visibility }: { visibility: boolean }) {
     }
   }, [project, AvatarRef.current]);
 
-  if (!visibility) return null;
+  if (!project_modal_visibility) return null;
 
   return (
     <div className={styles.project_modal} role="dialog">
@@ -122,7 +122,7 @@ function ProjectModal({ visibility }: { visibility: boolean }) {
           </div>
         </header>
         <main className={styles.modal_body}>
-          <div className={styles.form_group}>
+          <div className="form-group">
             <label htmlFor="name">Project Name</label>
             <input
               id="name"
@@ -133,7 +133,7 @@ function ProjectModal({ visibility }: { visibility: boolean }) {
             />
           </div>
 
-          <div className={styles.form_group}>
+          <div className="form-group">
             <label htmlFor="description">Project Description</label>
             <textarea
               id="description"
@@ -143,7 +143,7 @@ function ProjectModal({ visibility }: { visibility: boolean }) {
             />
           </div>
 
-          <div className={styles.form_group}>
+          <div className="form-group">
             <Button
               type="button"
               title="Create Project"
