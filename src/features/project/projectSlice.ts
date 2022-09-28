@@ -3,7 +3,7 @@ import * as uuid from "uuid";
 
 // type
 import { IProject } from "src/types/project";
-import { Priority, Status, Type } from "src/types/task";
+import { Priority, Status, Type } from "src/types/task.d";
 
 export interface ProjectState {
   projects: IProject[] | [];
@@ -25,22 +25,40 @@ const initialState: ProjectState = {
   }
 };
 
+type ProjectPayload = {
+  name: string;
+  description: string;
+  avatar: string;
+};
+
+type TaskPayload = {
+  title: string;
+  description: string;
+  type: Type;
+  priority: Priority;
+  status: Status;
+};
+
+type DragTaskPayload = {
+  id: string;
+  source: { index: number; droppable: number };
+  destination: { index: number; droppable?: number };
+};
+
 export const projectSlice = createSlice({
   name: "projects",
   initialState,
   reducers: {
-    create_project: (
-      state,
-      action: PayloadAction<{
-        name: string;
-        description: string;
-        avatar: string;
-      }>
-    ) => {
+    create_project: (state, action: PayloadAction<ProjectPayload>) => {
       const project = {
         ...action.payload,
         id: uuid.v4(),
-        tasks: [],
+        tasks: {
+          [Status.NextUp]: [],
+          [Status.InProgress]: [],
+          [Status.Review]: [],
+          [Status.Completed]: []
+        },
         created_at: new Date().getTime()
       };
 
@@ -70,16 +88,7 @@ export const projectSlice = createSlice({
           : { status: null })
       };
     },
-    create_task: (
-      state,
-      action: PayloadAction<{
-        title: string;
-        description: string;
-        type: Type;
-        priority: Priority;
-        status: Status;
-      }>
-    ) => {
+    create_task: (state, action: PayloadAction<TaskPayload>) => {
       const task = {
         ...action.payload,
         id: uuid.v4(),
@@ -89,7 +98,43 @@ export const projectSlice = createSlice({
       const active = state.projects.find(p => p.id === state.active?.id);
 
       if (active) {
-        active.tasks.push(task);
+        active.tasks[action.payload.status as Status].push(task);
+        state.active = active;
+      }
+    },
+    sort_tasks: (state, action: PayloadAction<DragTaskPayload>) => {
+      const active = state.projects.find(p => p.id === state.active?.id);
+
+      if (active) {
+        const tasks = active.tasks[action.payload.source.droppable as Status];
+        const [reordered] = tasks.splice(action.payload.source.index, 1);
+        tasks.splice(action.payload.destination.index, 0, reordered);
+
+        state.active = active;
+      }
+    },
+    move_tasks: (state, action: PayloadAction<DragTaskPayload>) => {
+      const active = state.projects.find(p => p.id === state.active?.id);
+
+      if (active) {
+        const tasks = active.tasks;
+        const task = tasks[action.payload.source.droppable as Status].find(
+          t => t.id === action.payload.id
+        );
+
+        if (task) {
+          tasks[action.payload.source.droppable as Status] = tasks[
+            action.payload.source.droppable as Status
+          ].filter(t => t.id !== action.payload.id);
+          tasks[action.payload.destination.droppable as Status].splice(
+            action.payload.destination.index,
+            0,
+            task
+          );
+
+          task.status = action.payload.destination.droppable as Status;
+          state.active = active;
+        }
       }
     }
   }
@@ -101,6 +146,8 @@ export const {
   remove_project,
   create_project_modal,
   create_task_modal,
-  create_task
+  create_task,
+  sort_tasks,
+  move_tasks
 } = projectSlice.actions;
 export default projectSlice.reducer;

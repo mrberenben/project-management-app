@@ -14,5 +14,29 @@
   inline-size: 100%;
   block-size: 100%;
 
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-block-end: 1rem;
+}
+
+.project_header {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 2rem;
+}
+
+.project_title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.0256rem;
+  color: var(--colors-dark-300);
+}
+
+.project_desc {
+  font-size: 1rem;
+  color: var(--colors-dark-700);
+  letter-spacing: -0.0128rem;
+
+  margin-block-start: 0.5rem;
+  margin-inline-start: 0.1rem;
 }

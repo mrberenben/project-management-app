@@ -1,5 +1,5 @@
 // components
-import Sidebar from "src/components/layout/sidebar";
+import Header from "src/components/layout/header";
 
 type AppLayoutProps = {
   children: React.ReactNode;
@@ -9,14 +9,13 @@ const styles: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
   blockSize: "100%",
-  marginInlineStart: 280,
-  padding: "3rem"
+  marginBlockStart: 90
 };
 
 function AppLayout(props: AppLayoutProps) {
   return (
     <>
-      <Sidebar />
+      <Header />
       <div style={styles}>{props.children}</div>
     </>
   );

@@ -1,21 +1,118 @@
 .header {
+  position: fixed;
+  inset: 0;
+  bottom: initial;
+
+  inline-size: 100%;
+  block-size: 90px;
+
+  background-color: var(--colors-light-100);
+  border-bottom: 1px solid var(--colors-light-200);
+
+  z-index: 100;
+}
+
+.header_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  inline-size: 100%;
+  block-size: 100%;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--colors-dark-300);
+  letter-spacing: -0.0256rem;
+}
+
+.project_wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
+
+  max-inline-size: 230px;
+  inline-size: 100%;
 }
 
-.title {
-  font-size: 2rem;
+.project {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+  padding: 0.5rem;
+
+  border-radius: var(--radius-m);
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: 150ms background-color var(--transition-curve);
+  will-change: background-color;
+}
+
+.project:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.project_icon {
+  display: flex;
+
+  inline-size: 3rem;
+  block-size: 3rem;
+
+  user-select: none;
+}
+
+.project_icon img {
+  pointer-events: none;
+}
+
+.project_metadata {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  user-select: none;
+}
+
+.project_metadata .project_name {
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.0256rem;
-  color: var(--colors-dark-300);
+  letter-spacing: -0.0125rem;
+  line-height: 1.325;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.desc {
-  font-size: 1rem;
+.project_metadata .project_desc {
+  font-size: 12px;
+  letter-spacing: -0.0125rem;
   color: var(--colors-dark-700);
-  letter-spacing: -0.0128rem;
 
-  margin-block-start: 0.5rem;
-  margin-inline-start: 0.1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project_switcher {
+  display: flex;
+
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+
+  color: var(--colors-dark-800);
+
+  margin-inline-start: auto;
+  transform: rotate(90deg);
+}
+
+.project:hover .project_switcher {
+  color: var(--colors-dark-300);
 }

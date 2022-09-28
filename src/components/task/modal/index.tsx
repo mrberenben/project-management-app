@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import styles from "src/components/task/modal/createTaskModal.module.css";
 
 // redux
@@ -55,7 +55,15 @@ function CreateTaskModal() {
   const createTask = useCallback(() => {
     dispatch(create_task(task));
     dispatch(create_task_modal({ visibility: false }));
-  }, [task]);
+  }, [task, task_modal.status]);
+
+  // effect when status changed
+  useEffect(() => {
+    setTask(prev => ({
+      ...prev,
+      status: task_modal.status || Status.NextUp
+    }));
+  }, [task_modal.status]);
 
   if (!task_modal.visibility) return null;
   return (
